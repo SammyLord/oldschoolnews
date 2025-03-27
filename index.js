@@ -62,7 +62,7 @@ async function getNews() {
             content = content.replace(/https?:\/\/[^\s]+/g, "")
             content = content.replace(emojiRemovalRegex, "")
             content = sanitizeHtml(content, {
-                allowedTags: ['p', 'b', 'i', 'br', 'strong', "em", "a"],
+                allowedTags: ['p', 'b', 'i', 'br', 'strong', "em", "a", "div", "ul", "li", "ol", "span"],
                 allowedAttributes: {
                     'a': [''],
                     'p': [''],
@@ -70,7 +70,12 @@ async function getNews() {
                     'i': [''],
                     'br': [''],
                     'strong': [''],
-                    'em': ['']
+                    'em': [''],
+                    'div': ['class'],
+                    'ul': ['class'],
+                    'li': ['class'],
+                    'ol': ['class'],
+                    'span': ['class']
                 }
             });
             if (content.length < 25) {
