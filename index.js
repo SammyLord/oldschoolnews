@@ -64,13 +64,15 @@ async function getNews() {
             content = sanitizeHtml(content, {
                 allowedTags: ['p', 'b', 'i', 'br', 'strong', "em", "a"],
                 allowedAttributes: {
-                    'a': ['style'],
-                    'p': ['style'],
-                    'b': ['style'],
-                    'i': ['style'],
-                    'br': ['style'],
-                    'strong': ['style'],
-                    'em': ['style']
+                    'a': [''],
+                    'p': [''],
+                    'b': [''],
+                    'i': [''],
+                    'ul': [''],
+                    'li': [''],
+                    'br': [''],
+                    'strong': [''],
+                    'em': ['']
                 }
             });
             if (content.length < 25) {
