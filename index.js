@@ -62,7 +62,16 @@ async function getNews() {
             content = content.replace(/https?:\/\/[^\s]+/g, "")
             content = content.replace(emojiRemovalRegex, "")
             content = sanitizeHtml(content, {
-                allowedTags: ['p', 'b', 'i']
+                allowedTags: ['p', 'b', 'i', 'br', 'strong', "em", "a"],
+                allowedAttributes: {
+                    'a': ['style'],
+                    'p': ['style'],
+                    'b': ['style'],
+                    'i': ['style'],
+                    'br': ['style'],
+                    'strong': ['style'],
+                    'em': ['style']
+                }
             });
             if (content.length < 25) {
                 content = "<b>No content or description available</b>"
