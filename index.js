@@ -76,7 +76,7 @@ async function getNews() {
     }));
     html = html + `
     <hr></hr>
-    <p><i>Copyright 2025 Sammy Lord. All rights reserved.</i></p>
+    <p><i>Copyright <SCRIPT>document.write(new Date().getFullYear());</SCRIPT> Sammy Lord. All rights reserved.</i></p>
     <p><i>DISCLAIMER: This is a news aggregator. The news is not owned by me. I am not responsible for the content of the news.</i></p>
     `
     return html;
