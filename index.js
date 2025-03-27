@@ -1,9 +1,12 @@
 let Parser = require('rss-parser');
 const express = require('express')
 const dotenv = require('dotenv')
+const emojiRegex = require('emoji-regex');
+
 dotenv.config()
 
 let parser = new Parser();
+const emojiRemovalRegex = new RegExp(emojiRegex(), 'g');
 const app = express()
 const port = process.env.PORT || 1273
 
@@ -47,6 +50,7 @@ async function getNews() {
             content = content.replaceAll('</a>', "")
             content = content.replaceAll('<img src="', "")
             content = content.replaceAll('</img>', "")
+            content = content.replace(emojiRemovalRegex, "")
             if (content.length < 25) {
                 content = "<b>No content or description available</b>"
             }
