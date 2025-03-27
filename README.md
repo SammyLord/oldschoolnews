@@ -1,6 +1,27 @@
-# Old School News (OSN)
+# Old School News
 
-## What is "OSN"?
+A simple news aggregator that fetches and displays RSS feeds in a clean, emoji-free format.
 
-OSN (short for Old School News) is a very simple news aggregator made for
-old internet browsers.
+## Allowed HTML Elements
+
+The following HTML elements are allowed in the news content:
+
+- Paragraphs (`<p>`)
+- Bold text (`<b>`)
+- Italic text (`<i>`)
+- Line breaks (`<br>`)
+- Strong text (`<strong>`)
+- Emphasized text (`<em>`)
+- Links (`<a>`)
+- Div containers (`<div>`)
+- Unordered lists (`<ul>`)
+- List items (`<li>`)
+- Ordered lists (`<ol>`)
+- Spans (`<span>`)
+
+All other HTML elements and attributes are stripped from the content for security and consistency.
+
+## Configuration
+
+See `.env.example` for configuration options.
+
