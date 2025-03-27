@@ -26,21 +26,25 @@ async function getNews() {
     <hr></hr>
     
     `;
-
-    let feeds = process.env.FEEDS.split(',') || [
-        'https://feeds.a.dj.com/rss/RSSWorldNews.xml',
-        'https://www.theguardian.com/world/rss',
-        'https://feeds.nbcnews.com/nbcnews/public/news',
-        'https://feeds.npr.org/1001/rss.xml',
-        'https://abcnews.go.com/abcnews/topstories',
-        'https://www.cbsnews.com/latest/rss/us',
-        'https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml',
-        'https://www.reddit.com/r/news.rss',
-        'https://lwn.net/headlines/newrss',
-        'http://rss.slashdot.org/Slashdot/slashdotMain',
-        'https://www.cbsnews.com/latest/rss/technology',
-        'https://www.theverge.com/rss/index.xml'
-    ];
+    let feeds = [];
+    try{
+        feeds = process.env.FEEDS.split(',')
+    } catch {
+        feeds = [
+            'https://feeds.a.dj.com/rss/RSSWorldNews.xml',
+            'https://www.theguardian.com/world/rss',
+            'https://feeds.nbcnews.com/nbcnews/public/news',
+            'https://feeds.npr.org/1001/rss.xml',
+            'https://abcnews.go.com/abcnews/topstories',
+            'https://www.cbsnews.com/latest/rss/us',
+            'https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml',
+            'https://www.reddit.com/r/news.rss',
+            'https://lwn.net/headlines/newrss',
+            'http://rss.slashdot.org/Slashdot/slashdotMain',
+            'https://www.cbsnews.com/latest/rss/technology',
+            'https://www.theverge.com/rss/index.xml'
+        ];
+    }
 
     // Process all feeds concurrently and wait for all to complete
     await Promise.all(feeds.map(async (nonparsed) => {
