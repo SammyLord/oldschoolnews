@@ -1,0 +1,16 @@
+{
+  "name": "oldschoolnews",
+  "version": "1.0.0",
+  "description": "OSN - News for Old Browsers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sammy Lord (Sneed Group)",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "rss-parser": "^3.13.0"
+  }
+}
