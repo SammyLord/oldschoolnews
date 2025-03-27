@@ -45,6 +45,8 @@ async function getNews() {
             content = content.replace(/https?:\/\/[^\s]+/g, "")
             content = content.replaceAll('<a href="', "")
             content = content.replaceAll('</a>', "")
+            content = content.replaceAll('<img src="', "")
+            content = content.replaceAll('</img>', "")
             if (content.length < 25) {
                 content = "<b>No content or description available</b>"
             }
