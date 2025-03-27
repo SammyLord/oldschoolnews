@@ -62,14 +62,12 @@ async function getNews() {
             content = content.replace(/https?:\/\/[^\s]+/g, "")
             content = content.replace(emojiRemovalRegex, "")
             content = sanitizeHtml(content, {
-                allowedTags: ['p', 'b', 'i', 'br', 'strong', "em", "a", "ul", "li"],
+                allowedTags: ['p', 'b', 'i', 'br', 'strong', "em", "a"],
                 allowedAttributes: {
                     'a': [''],
                     'p': [''],
                     'b': [''],
                     'i': [''],
-                    'ul': [''],
-                    'li': [''],
                     'br': [''],
                     'strong': [''],
                     'em': ['']
