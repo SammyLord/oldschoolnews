@@ -21,7 +21,12 @@ if (!String.prototype.replaceAll) {
 
 async function getNews() {
 
-    let html = `<h1>Old School News</h1>
+    let html = `
+<head>
+<title>OSN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<h1>Old School News</h1>
     <p><b><i>News back to the future.</b></i></p>
     <hr></hr>
     
