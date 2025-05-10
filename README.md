@@ -1,4 +1,4 @@
-# Old School News
+# 📰 Old School News
 
 A simple news aggregator that fetches and displays RSS feeds in a clean, emoji-free format.
 
